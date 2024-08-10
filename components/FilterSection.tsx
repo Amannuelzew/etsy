@@ -6,7 +6,7 @@ import CloseIcon from "@mui/icons-material/Close";
 const FilterSection = () => {
   return (
     <>
-      <Box sx={{ display: "flex", justifyContent: "space-between", my: 1 }}>
+      <Box sx={{ display: "flex", justifyContent: "space-between", mt: 1 }}>
         <PillButton label="All Filters">
           <FilterListIcon />
         </PillButton>
@@ -22,6 +22,7 @@ const FilterSection = () => {
           bgcolor: "#0e0e0e17",
           p: 1,
           borderRadius: "20px",
+          mt: 1,
         }}
       >
         <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
@@ -38,7 +39,14 @@ const FilterSection = () => {
         </Box>
       </Box>
       {/* third row */}
-      <Box sx={{ display: "flex", justifyContent: "space-between", mt: 3 }}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          my: 1,
+        }}
+      >
         <Typography
           sx={{
             fontWeight: "700",

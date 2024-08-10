@@ -1,9 +1,12 @@
 "use client";
-import { Box, Divider, Paper, Typography } from "@mui/material";
+import { Box, Divider, ListItem, Typography } from "@mui/material";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider, createTheme } from "@mui/material";
 import AdSection from "./AdSection";
 import FilterSection from "./FilterSection";
+import ListItems from "./ListItems";
+import DescriptionSection from "./DescriptionSection";
+import EmailSection from "./EmailSection";
 
 const theme = createTheme({
   typography: {
@@ -20,7 +23,10 @@ const HomeSection = () => {
         <AdSection />
         <Divider />
         <FilterSection />
+        <ListItems />
       </Box>
+      <DescriptionSection />
+      {/* <EmailSection /> */}
     </ThemeProvider>
   );
 };
