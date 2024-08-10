@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Roboto_Slab } from "next/font/google";
 import "./globals.css";
-import { Box } from "@mui/material";
-
+import { Analytics } from "@vercel/analytics/react";
 const inter = Inter({ style: ["normal"], subsets: ["latin"], display: "swap" });
 const helvetica = Roboto_Slab({
   subsets: ["latin"],
@@ -23,6 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={helvetica.className}>
         <main>{children}</main>
+        <Analytics />
       </body>
     </html>
   );

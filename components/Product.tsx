@@ -1,3 +1,4 @@
+"use client";
 import { Box, Button, Grid, Stack, Typography } from "@mui/material";
 import Rating from "./Rating";
 import DoneIcon from "@mui/icons-material/Done";

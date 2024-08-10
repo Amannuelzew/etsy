@@ -1,3 +1,4 @@
+"use client";
 import { Box, Stack, Typography } from "@mui/material";
 import Rating from "./Rating";
 import Link from "next/link";
