@@ -1,9 +1,10 @@
+"use client";
 import { Box, Chip, Paper, Stack, styled, Typography } from "@mui/material";
 import PillButton from "./PillButton";
 import Rating from "./Rating";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 
-const AdComponent = () => {
+const AdSection = () => {
   return (
     <Box sx={{ display: "flex", gap: 4, p: 1 }}>
       {/* preview image */}
@@ -12,7 +13,7 @@ const AdComponent = () => {
           position: "relative",
           width: 320,
           height: 200,
-          bgcolor: "gray",
+          bgcolor: "#0e0e0e17",
           borderRadius: "5px",
         }}
       >
@@ -47,16 +48,14 @@ const AdComponent = () => {
         </Typography>
         <Chip label="Free Shiping" size="small" color="success" />
         <Box sx={{ my: 2 }}>
-          <PillButton label={"Shop this item"} width={150}>
-            {""}
-          </PillButton>
+          <PillButton label={"Shop this item"}>{""}</PillButton>
         </Box>
       </Box>
     </Box>
   );
 };
 
-export default AdComponent;
+export default AdSection;
 
 const CustomIconButton = ({ children }: { children: React.ReactNode }) => {
   return (

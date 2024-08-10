@@ -1,13 +1,12 @@
-import { Box, Typography } from "@mui/material";
+"use client";
+import { Box, Stack, Typography } from "@mui/material";
 
 const PillButton = ({
   label,
-  width,
   children,
   ...props
 }: {
   label: string;
-  width: number;
   children: React.ReactNode;
 }) => {
   return (
@@ -18,20 +17,21 @@ const PillButton = ({
         border: 2,
         gap: 1,
         borderRadius: "20px",
-        textAlign: "center",
-        width: width,
+        display: "inline-block",
       }}
     >
-      {children}
-      <Typography
-        sx={{
-          fontWeight: "700",
-          fontSize: "13.99px",
-          color: "#222",
-        }}
-      >
-        {label}
-      </Typography>
+      <Box sx={{ display: "flex", alignItems: "center" }}>
+        {children}
+        <Typography
+          sx={{
+            fontWeight: "700",
+            fontSize: "13.99px",
+            color: "#222",
+          }}
+        >
+          {label}
+        </Typography>
+      </Box>
     </Box>
   );
 };
