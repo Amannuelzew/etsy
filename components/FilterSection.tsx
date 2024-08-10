@@ -3,10 +3,17 @@ import { Box, Typography } from "@mui/material";
 import PillButton from "./PillButton";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import CloseIcon from "@mui/icons-material/Close";
+
 const FilterSection = () => {
   return (
     <>
-      <Box sx={{ display: "flex", justifyContent: "space-between", mt: 1 }}>
+      <Box
+        sx={{
+          display: { xs: "none", md: "flex" },
+          justifyContent: "space-between",
+          mt: 1,
+        }}
+      >
         <PillButton label="All Filters">
           <FilterListIcon />
         </PillButton>
@@ -14,6 +21,27 @@ const FilterSection = () => {
           <Typography>365 results, with Ads</Typography>
           <PillButton label="Sort by:Most relevant">{""}</PillButton>
         </Box>
+      </Box>
+      <Box
+        sx={{
+          display: { xs: "flex", md: "none" },
+          justifyContent: "end",
+          mt: 1,
+          p: 1,
+        }}
+      >
+        <FilterListIcon sx={{ borderRadius: "50%", border: 1 }} />
+      </Box>
+      <Box
+        sx={{
+          display: { xs: "flex", md: "none" },
+          gap: 1,
+          p: 1,
+          alignItems: "center",
+          justifyContent: "end",
+        }}
+      >
+        <Typography>365 results for &#39;soccer &#39; with ads</Typography>
       </Box>
       {/* second row */}
       <Box
@@ -25,7 +53,13 @@ const FilterSection = () => {
           mt: 1,
         }}
       >
-        <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
+        <Box
+          sx={{
+            display: "flex",
+            gap: 1,
+            alignItems: "center",
+          }}
+        >
           <Typography
             sx={{
               fontWeight: "700",
@@ -41,7 +75,7 @@ const FilterSection = () => {
       {/* third row */}
       <Box
         sx={{
-          display: "flex",
+          display: { xs: "none", md: "flex" },
           justifyContent: "space-between",
           alignItems: "center",
           my: 1,

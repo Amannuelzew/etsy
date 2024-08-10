@@ -19,7 +19,7 @@ const HomeSection = () => {
   return (
     <ThemeProvider theme={theme}>
       <Navbar />
-      <Box sx={{ py: 1, px: 6 }}>
+      <Box sx={{ py: 1, px: { xs: 0, md: 2 } }}>
         <AdSection />
         <Divider />
         <FilterSection />

@@ -9,17 +9,31 @@ import CloseIcon from "@mui/icons-material/Close";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import CardGiftcardOutlinedIcon from "@mui/icons-material/CardGiftcardOutlined";
+import PersonIcon from "@mui/icons-material/Person";
 const Navbar = () => {
   return (
-    <Paper sx={{ py: 1, px: 8 }}>
+    <Paper
+      sx={{
+        display: "inline-block",
+        width: "100%",
+        py: 1,
+        px: { xs: 1, md: 8 },
+      }}
+    >
       {/* top navbar */}
-      <Box sx={{ display: "flex", gap: 3, alignItems: "center" }}>
-        <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
+      <Box
+        sx={{ display: "flex", gap: { xs: 0, md: 3 }, alignItems: "center" }}
+      >
+        <Box
+          sx={{ display: "flex", gap: { xs: 0, md: 2 }, alignItems: "center" }}
+        >
+          <MenuIcon sx={{ mr: 1, display: { xs: "block", md: "none" } }} />
           <Typography
-            variant="h4"
             sx={{
               color: "#f1641e",
-              fontWeight: 500,
+              mr: 1,
+              fontWeight: { xs: 10, md: 500 },
+              fontSize: { xs: "25px", md: "50px" },
               fontFamily: "Roboto_Slab",
             }}
           >
@@ -27,7 +41,7 @@ const Navbar = () => {
           </Typography>
           <Box
             sx={{
-              display: "flex",
+              display: { xs: "none", md: "flex" },
               gap: 1,
               p: 1,
               color: "#222",
@@ -39,12 +53,13 @@ const Navbar = () => {
               },
             }}
           >
-            <MenuIcon />
+            <MenuIcon sx={{ display: { xs: "none", md: "block" } }} />
             <Typography
               sx={{
                 fontWeight: "700",
                 fontSize: "12.99px",
                 color: "#222",
+                display: { xs: "none", md: "block" },
               }}
             >
               categories
@@ -54,7 +69,7 @@ const Navbar = () => {
           <Typography
             sx={{
               p: 1,
-              //fontSize: "12.99px",
+              display: { xs: "none", md: "block" },
               "&:hover": {
                 backgroundColor: "#0e0e0e17",
                 borderRadius: "20px",
@@ -67,11 +82,14 @@ const Navbar = () => {
           <Box
             sx={{
               display: "flex",
-              gap: 2,
+              gap: { xs: 0, md: 2 },
               alignItems: "center",
             }}
           >
-            <IconButton>
+            <IconButton sx={{ display: { xs: "relative", md: "none" } }}>
+              <PersonIcon />
+            </IconButton>
+            <IconButton sx={{ display: { xs: "none", md: "block" } }}>
               <FavoriteBorderOutlinedIcon />
             </IconButton>
             <IconButton>
@@ -88,9 +106,9 @@ const Navbar = () => {
         sx={{
           mt: 0.5,
           pl: 35,
-          display: "flex",
           gap: 3,
           alignItems: "center",
+          display: { xs: "none", md: "flex" },
         }}
       >
         <Box
@@ -188,7 +206,7 @@ const Searchbar = () => {
       sx={{
         display: "flex",
         alignItems: "center",
-        width: 800,
+        width: { xs: 200, md: 800 },
         border: 2,
         borderRadius: "40px",
       }}
@@ -199,12 +217,12 @@ const Searchbar = () => {
         inputProps={{ "aria-label": "search" }}
       />
       <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
-        <IconButton>
+        <IconButton sx={{ display: { xs: "none", md: "block" } }}>
           <CloseIcon />
         </IconButton>
         <IconButton
           type="button"
-          sx={{ p: "4px", m: 0.5, backgroundColor: "#f1641e" }}
+          sx={{ p: "4px", m: 0.5, backgroundColor: "#f1641e", color: "#FFF" }}
           aria-label="search"
         >
           <SearchIcon />

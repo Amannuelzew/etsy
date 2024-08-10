@@ -1,8 +1,8 @@
 import { Box, Stack, Typography } from "@mui/material";
 import Rating from "./Rating";
 import Link from "next/link";
-
-const Item = () => {
+import Image from "next/image";
+const Item = ({ image }: { image: boolean }) => {
   return (
     <Link href="listing/1" style={{ textDecoration: "none", color: "#000" }}>
       <Stack
@@ -19,10 +19,22 @@ const Item = () => {
           sx={{
             width: 190,
             height: 170,
-            bgcolor: "#0e0e0e17",
             borderRadius: "2px",
+            bgcolor: "#0e0e0e17",
           }}
-        ></Box>
+        >
+          {image ? (
+            <Image
+              src="/assets/main.webp"
+              alt="Picture of product"
+              width={190}
+              height={170}
+              style={{ borderRadius: "2px" }}
+            />
+          ) : (
+            ""
+          )}
+        </Box>
         <Typography
           sx={{
             fontWeight: "500",

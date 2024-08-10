@@ -12,7 +12,7 @@ const Breadcrumb = () => {
     <Box
       aria-label="breadcrumb"
       sx={{
-        display: "flex",
+        display: { xs: "none", md: "flex" },
         alignItems: "center",
         justifyContent: "center",
         p: 1,
@@ -20,9 +20,12 @@ const Breadcrumb = () => {
     >
       {lists.map((list, index) => (
         <Box key={index} sx={{ display: "flex", alignItems: "center" }}>
-          <Link href={list.path} style={{ color: "#000" }}>
-            <Typography> {list.name}</Typography>
-          </Link>
+          <Typography>
+            <Link href={list.path} style={{ color: "#000" }}>
+              {list.name}
+            </Link>
+          </Typography>
+
           <NavigateNextIcon fontSize="small" />
         </Box>
       ))}

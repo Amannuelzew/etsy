@@ -2,6 +2,7 @@
 import { ThemeProvider, createTheme } from "@mui/material";
 import Navbar from "./Navbar";
 import Breadcrumb from "./Breadcrumb";
+import Product from "./Product";
 const theme = createTheme({
   typography: {
     allVariants: {
@@ -15,6 +16,7 @@ const DetailSection = () => {
     <ThemeProvider theme={theme}>
       <Navbar />
       <Breadcrumb />
+      <Product />
     </ThemeProvider>
   );
 };
