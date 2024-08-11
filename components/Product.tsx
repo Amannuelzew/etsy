@@ -18,7 +18,7 @@ type productProps = {
   product_price: number;
   product_description: string;
   product_rating: number;
-  detail_images: [];
+  detail_images: string[];
   product_views_count: number;
   owner: string;
   category: string;
