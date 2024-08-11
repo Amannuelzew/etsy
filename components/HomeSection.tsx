@@ -50,7 +50,7 @@ const HomeSection = () => {
               >
                 This website is a clone and does not represent the official
                 website of{" "}
-                <Link style={{ color: "" }} href="etsy.com">
+                <Link style={{ color: "" }} href="https://www.etsy.com">
                   etsy.com
                 </Link>{" "}
                 .All content, images, and trademarks belong to their respective
