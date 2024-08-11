@@ -3,9 +3,29 @@ import { Box, Stack, Typography } from "@mui/material";
 import Rating from "./Rating";
 import Link from "next/link";
 import Image from "next/image";
-const Item = ({ image }: { image: boolean }) => {
+type dataProps = {
+  product_id: string;
+  product_title: string;
+  product_price: number;
+  product_description: string;
+  product_rating: number;
+  product_views_count: number;
+  owner: string;
+  category: string;
+  brand: string;
+  available_quantity: number;
+  image_url: string;
+  discount_percentage: number;
+  is_featured: boolean;
+  created_at: string;
+  updated_at: string;
+};
+const Item = ({ item }: { item: dataProps }) => {
   return (
-    <Link href="listing/1" style={{ textDecoration: "none", color: "#000" }}>
+    <Link
+      href={`listing/${item.product_id}`}
+      style={{ textDecoration: "none", color: "#000" }}
+    >
       <Stack
         sx={{
           borderRadius: "2px",
@@ -18,23 +38,19 @@ const Item = ({ image }: { image: boolean }) => {
       >
         <Box
           sx={{
-            width: 190,
+            width: 200,
             height: 170,
             borderRadius: "2px",
             bgcolor: "#0e0e0e17",
           }}
         >
-          {image ? (
-            <Image
-              src="/assets/main.webp"
-              alt="Picture of product"
-              width={190}
-              height={170}
-              style={{ borderRadius: "2px" }}
-            />
-          ) : (
-            ""
-          )}
+          <Image
+            src={item.image_url}
+            alt={item.product_title}
+            width={200}
+            height={170}
+            style={{ borderRadius: "2px" }}
+          />
         </Box>
         <Typography
           sx={{
@@ -42,11 +58,11 @@ const Item = ({ image }: { image: boolean }) => {
             fontSize: "16.99px",
           }}
         >
-          Personalized Soccer Ball Not....
+          {item.product_title}
         </Typography>
         <Box sx={{ display: "flex" }}>
-          <Rating count={5} />
-          <Typography>(20.1K) </Typography>
+          <Rating count={item.product_rating} />
+          <Typography>({item.product_views_count}) </Typography>
         </Box>
         <Typography
           sx={{
@@ -54,7 +70,7 @@ const Item = ({ image }: { image: boolean }) => {
             fontSize: "14.99px",
           }}
         >
-          USD 18.00
+          USD {item.product_price}
         </Typography>
         <Typography
           sx={{
@@ -62,7 +78,7 @@ const Item = ({ image }: { image: boolean }) => {
             color: "#444",
           }}
         >
-          DesigningMoments
+          {item.owner}
         </Typography>
       </Stack>
     </Link>

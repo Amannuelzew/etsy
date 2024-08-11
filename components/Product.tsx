@@ -11,7 +11,27 @@ import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 import FlagIcon from "@mui/icons-material/Flag";
 import Image from "next/image";
 import { Fragment } from "react";
-const Product = () => {
+
+import { usePathname } from "next/navigation";
+
+type productProps = {
+  product_id: string;
+  product_title: string;
+  product_price: number;
+  product_description: string;
+  product_rating: number;
+  product_views_count: number;
+  owner: string;
+  category: string;
+  brand: string;
+  available_quantity: number;
+  image_url: string;
+  discount_percentage: number;
+  is_featured: boolean;
+  created_at: string;
+  updated_at: string;
+};
+const Product = ({ product }: { product: productProps }) => {
   return (
     <Grid
       container
@@ -24,8 +44,8 @@ const Product = () => {
             {[...Array.from({ length: 8 }, (_, i) => i)].map((item, index) => (
               <Box sx={{ mt: 1, borderRadius: "2px" }} key={index}>
                 <Image
-                  src="/assets/main.webp"
-                  alt="Picture of product"
+                  src={product.image_url}
+                  alt={product.product_title}
                   width={45}
                   height={35}
                   style={{ borderRadius: "2px" }}
@@ -45,8 +65,8 @@ const Product = () => {
             }}
           >
             <Image
-              src="/assets/main.webp"
-              alt="Picture of product"
+              src={product.image_url}
+              alt={product.product_title}
               width={670}
               height={400}
               style={{ borderRadius: "2px" }}
@@ -65,7 +85,6 @@ const Product = () => {
           <Box
             sx={{
               position: "relative",
-
               height: 400,
               borderRadius: "5px",
               display: { xs: "block", md: "none" },
@@ -73,8 +92,8 @@ const Product = () => {
           >
             <div style={{ width: "100%" }}>
               <Image
-                src="/assets/main.webp"
-                alt="Picture of product"
+                src={product.image_url}
+                alt={product.product_title}
                 layout="fill"
                 objectFit="cover"
                 style={{ borderRadius: "2px" }}
@@ -167,7 +186,7 @@ const Product = () => {
                 Sort by:Suggested
               </Typography>
             </Box>
-            <Rating count={5} />
+            <Rating count={product.product_rating} />
             <Grid container spacing={1} sx={{ my: 2 }}>
               <Grid item md={8}>
                 <Typography
@@ -237,7 +256,7 @@ const Product = () => {
           }}
         >
           {" "}
-          USD 50.79
+          USD {product.product_price}
         </Typography>
         <Typography
           sx={{
@@ -256,8 +275,7 @@ const Product = () => {
             mb: 1,
           }}
         >
-          Soccer Ball Necklace-Football Beaded Necklace-soccer Fans Gift-Soccer
-          Ball Charm Necklace-Ball Charm-Football Charm Necklace-Green Necklace
+          {product.product_description}
         </Typography>
         <Box sx={{ display: "flex", gap: 2, my: 1 }}>
           <Typography
@@ -266,9 +284,9 @@ const Product = () => {
               fontSize: "13.99px",
             }}
           >
-            DreamBeadsDovi
+            {product.owner}
           </Typography>
-          <Rating count={5} />
+          <Rating count={product.product_rating} />
         </Box>
         <Box sx={{ display: "flex", alignItems: "center", gap: 2, my: 1 }}>
           <DoneIcon sx={{ color: "lightblue" }} />

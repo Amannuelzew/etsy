@@ -1,5 +1,5 @@
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
-import { Box, Typography } from "@mui/material";
+import { Box, ListItem, ListItemText, Typography } from "@mui/material";
 import Link from "next/link";
 const lists = [
   { name: "Homepage", path: "/" },
@@ -15,16 +15,21 @@ const Breadcrumb = () => {
         display: { xs: "none", md: "flex" },
         alignItems: "center",
         justifyContent: "center",
-        p: 1,
       }}
     >
       {lists.map((list, index) => (
         <Box key={index} sx={{ display: "flex", alignItems: "center" }}>
-          <Typography>
-            <Link href={list.path} style={{ color: "#000" }}>
-              {list.name}
-            </Link>
-          </Typography>
+          {index === 0 ? (
+            <ListItem>
+              <ListItemText>
+                <Link href={list.path} style={{ color: "#000" }}>
+                  {list.name}
+                </Link>
+              </ListItemText>
+            </ListItem>
+          ) : (
+            list.name
+          )}
 
           <NavigateNextIcon fontSize="small" />
         </Box>
