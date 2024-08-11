@@ -16,8 +16,8 @@ const Navbar = () => {
       sx={{
         display: "inline-block",
         width: "100%",
-        py: 1,
-        px: { xs: 1, md: 8 },
+        px: { xs: 1, md: 4 },
+        py: { xs: 1, md: 0 },
       }}
     >
       {/* top navbar */}
@@ -31,9 +31,8 @@ const Navbar = () => {
           <Typography
             sx={{
               color: "#f1641e",
-              mr: 1,
               fontWeight: { xs: 10, md: 500 },
-              fontSize: { xs: "25px", md: "50px" },
+              fontSize: { xs: "25px", md: "40px" },
               fontFamily: "Roboto_Slab",
             }}
           >
@@ -104,9 +103,9 @@ const Navbar = () => {
       {/* below searchbar */}
       <Box
         sx={{
-          mt: 0.5,
-          pl: 35,
+          pl: 40,
           gap: 3,
+          py: 1,
           alignItems: "center",
           display: { xs: "none", md: "flex" },
         }}

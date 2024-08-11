@@ -82,7 +82,7 @@ const HomeSection = () => {
         ""
       )}
       <Navbar />
-      <Box sx={{ py: 1, px: { xs: 0, md: 2 } }}>
+      <Box sx={{ px: { xs: 0, md: 2 } }}>
         <AdSection />
         <Divider />
         <FilterSection />

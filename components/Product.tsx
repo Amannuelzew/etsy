@@ -12,14 +12,13 @@ import FlagIcon from "@mui/icons-material/Flag";
 import Image from "next/image";
 import { Fragment } from "react";
 
-import { usePathname } from "next/navigation";
-
 type productProps = {
   product_id: string;
   product_title: string;
   product_price: number;
   product_description: string;
   product_rating: number;
+  detail_images: [];
   product_views_count: number;
   owner: string;
   category: string;
@@ -38,18 +37,38 @@ const Product = ({ product }: { product: productProps }) => {
       spacing={{ xs: 2, md: 5 }}
       sx={{ px: { xs: 0, md: 5 }, py: { xs: 0, md: 4 } }}
     >
-      <Grid item xs={12} md={7} container spacing={2} sx={{}}>
+      <Grid item xs={12} md={8} container spacing={6} sx={{}}>
         <Grid item md={1} sx={{ display: { xs: "none", md: "block" } }}>
           <Stack>
-            {[...Array.from({ length: 8 }, (_, i) => i)].map((item, index) => (
-              <Box sx={{ mt: 1, borderRadius: "2px" }} key={index}>
+            {product.detail_images.map((item, index) => (
+              <Box
+                sx={{
+                  position: "relative",
+                  borderRadius: "6px",
+                  width: "60px",
+                  height: "60px",
+                  mb: 1,
+                }}
+                key={index}
+              >
                 <Image
-                  src={product.image_url}
+                  src={item}
                   alt={product.product_title}
-                  width={45}
-                  height={35}
-                  style={{ borderRadius: "2px" }}
+                  width={60}
+                  height={60}
+                  objectFit="fit"
+                  style={{ borderRadius: "6px" }}
                 />
+                <Box
+                  sx={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    bgcolor: "rgba(255,255,255,0.5)",
+                  }}
+                ></Box>
               </Box>
             ))}
           </Stack>
@@ -58,8 +77,8 @@ const Product = ({ product }: { product: productProps }) => {
           <Box
             sx={{
               position: "relative",
-              width: 670,
-              height: 400,
+              width: 770,
+              height: 500,
               borderRadius: "5px",
               display: { xs: "none", md: "block" },
             }}
@@ -67,8 +86,8 @@ const Product = ({ product }: { product: productProps }) => {
             <Image
               src={product.image_url}
               alt={product.product_title}
-              width={670}
-              height={400}
+              width={770}
+              height={500}
               style={{ borderRadius: "2px" }}
             />
             <CustomIconButton top={5} right={4}>
