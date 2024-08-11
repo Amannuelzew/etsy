@@ -17,7 +17,7 @@ const Navbar = () => {
         display: "inline-block",
         width: "100%",
         px: { xs: 1, md: 4 },
-        py: { xs: 1, md: 0 },
+        py: { xs: 1, md: 0.5 },
       }}
     >
       {/* top navbar */}
@@ -85,16 +85,20 @@ const Navbar = () => {
               alignItems: "center",
             }}
           >
-            <IconButton sx={{ display: { xs: "relative", md: "none" } }}>
+            <IconButton
+              sx={{ color: "#000", display: { xs: "relative", md: "none" } }}
+            >
               <PersonIcon />
             </IconButton>
-            <IconButton sx={{ display: { xs: "none", md: "block" } }}>
+            <IconButton
+              sx={{ color: "#000", display: { xs: "none", md: "block" } }}
+            >
               <FavoriteBorderOutlinedIcon />
             </IconButton>
-            <IconButton>
+            <IconButton sx={{ color: "#000" }}>
               <CardGiftcardOutlinedIcon />
             </IconButton>
-            <IconButton>
+            <IconButton sx={{ color: "#000" }}>
               <ShoppingCartOutlinedIcon />
             </IconButton>
           </Box>
@@ -211,8 +215,8 @@ const Searchbar = () => {
       }}
     >
       <InputBase
-        sx={{ ml: 1, flex: 1 }}
-        placeholder="search"
+        sx={{ ml: 1, flex: 1, p: 1 }}
+        placeholder="search for anything"
         inputProps={{ "aria-label": "search" }}
       />
       <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
