@@ -10,6 +10,7 @@ import EmailSection from "./EmailSection";
 import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
 import Link from "next/link";
+import FooterSection from "./FooterSection";
 
 const theme = createTheme({
   typography: {
@@ -89,7 +90,10 @@ const HomeSection = () => {
         <ListItems />
       </Box>
       <DescriptionSection />
-      {/* <EmailSection /> */}
+      <EmailSection />
+      <footer>
+        <FooterSection />
+      </footer>
     </ThemeProvider>
   );
 };
