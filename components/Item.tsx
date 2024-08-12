@@ -36,12 +36,30 @@ const Item = ({ item }: { item: dataProps }) => {
           },
         }}
       >
+        {/* mobile view */}
+        <Box
+          sx={{
+            width: 170,
+            height: 150,
+            borderRadius: "6px",
+            display: { xs: "block", md: "none" },
+          }}
+        >
+          <Image
+            src={item.image_url}
+            alt={item.product_title}
+            width={170}
+            height={150}
+            objectFit="cover"
+            style={{ borderRadius: "2px" }}
+          />
+        </Box>
         <Box
           sx={{
             width: 200,
             height: 170,
             borderRadius: "2px",
-            bgcolor: "#0e0e0e17",
+            display: { xs: "none", md: "block" },
           }}
         >
           <Image

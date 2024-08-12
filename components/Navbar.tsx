@@ -21,12 +21,54 @@ const Navbar = () => {
       }}
     >
       {/* top navbar */}
+      {/* mobile view */}
+      <Typography
+        sx={{
+          color: "#f1641e",
+          fontWeight: { xs: 10, md: 500 },
+          fontSize: { xs: "25px", md: "40px" },
+          fontFamily: "Roboto_Slab",
+          display: { xs: "block", md: "none" },
+        }}
+      >
+        Etsy
+      </Typography>
+      <Box
+        sx={{
+          display: { xs: "flex", md: "none" },
+          justifyContent: "space-between",
+          gap: 1,
+          mb: 1,
+          alignItems: "center",
+        }}
+      >
+        <Typography sx={{ p: 1 }}>signin</Typography>
+        <Typography sx={{ p: 1, bgcolor: "#0e0e0e17", borderRadius: "20px" }}>
+          sell on Etsy
+        </Typography>
+
+        <Box sx={{ display: "flex" }}>
+          <IconButton sx={{ color: "#000" }}>
+            <PersonIcon />
+          </IconButton>
+          <IconButton sx={{ color: "#000" }}>
+            <FavoriteBorderOutlinedIcon />
+          </IconButton>
+          <IconButton sx={{ color: "#000" }}>
+            <CardGiftcardOutlinedIcon />
+          </IconButton>
+          <IconButton sx={{ color: "#000" }}>
+            <ShoppingCartOutlinedIcon />
+          </IconButton>
+        </Box>
+      </Box>
       <Box
         sx={{ display: "flex", gap: { xs: 0, md: 3 }, alignItems: "center" }}
       >
         <Box
           sx={{ display: "flex", gap: { xs: 0, md: 2 }, alignItems: "center" }}
         >
+          {/* mobile view */}
           <MenuIcon sx={{ mr: 1, display: { xs: "block", md: "none" } }} />
           <Typography
             sx={{
@@ -34,6 +76,7 @@ const Navbar = () => {
               fontWeight: { xs: 10, md: 500 },
               fontSize: { xs: "25px", md: "40px" },
               fontFamily: "Roboto_Slab",
+              display: { xs: "none", md: "block" },
             }}
           >
             Etsy
@@ -86,19 +129,18 @@ const Navbar = () => {
             }}
           >
             <IconButton
-              sx={{ color: "#000", display: { xs: "relative", md: "none" } }}
-            >
-              <PersonIcon />
-            </IconButton>
-            <IconButton
               sx={{ color: "#000", display: { xs: "none", md: "block" } }}
             >
               <FavoriteBorderOutlinedIcon />
             </IconButton>
-            <IconButton sx={{ color: "#000" }}>
+            <IconButton
+              sx={{ color: "#000", display: { xs: "none", md: "block" } }}
+            >
               <CardGiftcardOutlinedIcon />
             </IconButton>
-            <IconButton sx={{ color: "#000" }}>
+            <IconButton
+              sx={{ color: "#000", display: { xs: "none", md: "block" } }}
+            >
               <ShoppingCartOutlinedIcon />
             </IconButton>
           </Box>
@@ -209,7 +251,7 @@ const Searchbar = () => {
       sx={{
         display: "flex",
         alignItems: "center",
-        width: { xs: 200, md: 800 },
+        width: { xs: "calc(100vw - 50px)", md: 800 },
         border: 2,
         borderRadius: "40px",
       }}
