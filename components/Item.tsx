@@ -59,7 +59,7 @@ const Item = ({ item }: { item: dataProps }) => {
             width: 210,
             height: 170,
             borderRadius: "2px",
-            display: { xs: "none", md: "block" },
+            display: { xs: "none", md: "block", width: "100%", height: "100%" },
           }}
         >
           <Image

@@ -8,13 +8,43 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Image from "next/image";
 const AdSection = () => {
   return (
-    <Box sx={{ display: "flex", gap: { xs: 1, md: 4 }, p: { xs: 0, md: 1 } }}>
-      {/* preview image */}
+    <Box
+      sx={{
+        display: "flex",
+        gap: { xs: 1, md: 4 },
+        px: { xs: 0.5, md: 1 },
+        mt: 1,
+      }}
+    >
+      {/*mobile ad image */}
+      <Box
+        sx={{
+          display: { xs: "flex", md: "none" },
+          flexGrow: 1,
+          position: "relative",
+          width: 440,
+          height: 160,
+          borderRadius: "5px",
+        }}
+      >
+        <Image
+          src="/assets/ad.avif"
+          alt="Picture of product"
+          width={440}
+          height={160}
+          style={{ borderRadius: "2px", width: "100%", height: "100%" }}
+        />
+
+        <CustomIconButton>
+          <FavoriteBorderOutlinedIcon />
+        </CustomIconButton>
+      </Box>
+      {/* md ad image */}
       <Box
         sx={{
           position: "relative",
-          width: { xs: 120, md: 320 },
-          height: { xs: 100, md: 200 },
+          width: 320,
+          height: 200,
           bgcolor: "#0e0e0e17",
           borderRadius: "5px",
           display: { xs: "none", md: "block" },
@@ -25,37 +55,16 @@ const AdSection = () => {
           alt="Picture of product"
           width={320}
           height={200}
-          style={{ borderRadius: "2px" }}
+          style={{ borderRadius: "2px", width: "100%", height: "100%" }}
         />
 
         <CustomIconButton>
           <FavoriteBorderOutlinedIcon />
         </CustomIconButton>
       </Box>
-      <Box
-        sx={{
-          position: "relative",
-          width: { xs: 180, md: 320 },
-          height: { xs: 170, md: 200 },
-          bgcolor: "#0e0e0e17",
-          borderRadius: "5px",
-          display: { xs: "block", md: "none" },
-        }}
-      >
-        <Image
-          src="/assets/ad.avif"
-          alt="Picture of product"
-          width={180}
-          height={170}
-          style={{ borderRadius: "2px" }}
-        />
 
-        <CustomIconButton>
-          <FavoriteBorderOutlinedIcon />
-        </CustomIconButton>
-      </Box>
       {/* description */}
-      <Box sx={{ width: { xs: 230, md: 700 } }}>
+      <Box sx={{ width: { xs: 180, md: 700 } }}>
         <Stack
           direction="row"
           spacing={1}
