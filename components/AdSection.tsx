@@ -25,7 +25,6 @@ const AdSection = () => {
           alt="Picture of product"
           width={320}
           height={200}
-          objectFit="contain"
           style={{ borderRadius: "2px" }}
         />
 

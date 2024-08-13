@@ -11,12 +11,13 @@ import PublicIcon from "@mui/icons-material/Public";
 const EmailSection = () => {
   return (
     <>
-      <Box sx={{ bgcolor: "#CCEBFF", p: 7 }}>
+      <Box sx={{ bgcolor: "#CCEBFF", p: 2 }}>
         <Typography
           sx={{
             fontWeight: 600,
-            fontSize: "14.33px",
+            fontSize: "15.33px",
             textAlign: "center",
+            color: "#222222",
           }}
         >
           Yes! Send me exclusive offers, unique gift ideas, and personalized
@@ -24,7 +25,7 @@ const EmailSection = () => {
         </Typography>
         <Box
           sx={{
-            py: 5,
+            py: 2,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -34,16 +35,19 @@ const EmailSection = () => {
             placeholder="Enter your email"
             InputProps={{
               endAdornment: (
-                <InputAdornment position="end">
+                <InputAdornment position="end" variant="filled" component="div">
                   <Box
                     sx={{
-                      width: "100px",
-                      height: "50px",
+                      position: "absolute",
+                      top: 0,
+                      right: 0,
+                      width: "130px",
+                      height: "60px",
                       display: "flex",
                       alignItems: "center",
-                      borderRadius: "0 20px 20px 0",
                       justifyContent: "center",
-                      bgcolor: "red",
+                      borderRadius: "0 20px 20px 0",
+
                       "&:hover": {
                         bgcolor: "black",
                         color: "#FFF",
@@ -51,7 +55,9 @@ const EmailSection = () => {
                       },
                     }}
                   >
-                    <span>Subscribe</span>
+                    <span style={{ fontSize: "17px", fontWeight: "bold" }}>
+                      Subscribe
+                    </span>
                   </Box>
                 </InputAdornment>
               ),
@@ -61,7 +67,7 @@ const EmailSection = () => {
               bgcolor: "#FFF",
               border: "none",
               boxShadow: "inset 0 1px 3px rgba(0,0,0,0.2)",
-              width: 400,
+              width: { xs: "calc(100vw - 50px)", md: 480 },
               borderColor: "transparent",
               "& .MuiOutlinedInput-root": {
                 "& fieldset": {
@@ -80,24 +86,36 @@ const EmailSection = () => {
           />
         </Box>
       </Box>
+      {/* dashed */}
       <Box
         sx={{
-          py: 5,
+          py: 4,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          bgcolor: "#C15BFF",
+          bgcolor: "#3B67D9",
         }}
       >
-        <Box sx={{ display: "flex" }}>
-          <PublicIcon sx={{ color: "#FFF" }} fontSize="large" />
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", ms: "row" },
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <PublicIcon
+            sx={{ color: "#FFF", textAlign: "center", alignItems: "center" }}
+            fontSize="large"
+          />
           <Typography
             sx={{
-              fontWeight: 600,
-              fontSize: "14.33px",
+              fontWeight: 400,
+              fontSize: "16.33px",
               textAlign: "center",
               textDecoration: "underline",
               textDecorationStyle: "dashed",
+              textUnderlineOffset: "5px",
               color: "#FFF",
             }}
           >

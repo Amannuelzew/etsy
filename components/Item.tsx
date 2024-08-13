@@ -29,7 +29,7 @@ const Item = ({ item }: { item: dataProps }) => {
       <Stack
         sx={{
           borderRadius: "2px",
-          p: 1,
+          p: 0.5,
           "&:hover": {
             cursor: "pointer",
             boxShadow: 8,
@@ -39,7 +39,7 @@ const Item = ({ item }: { item: dataProps }) => {
         {/* mobile view */}
         <Box
           sx={{
-            width: 170,
+            width: "100%",
             height: 150,
             borderRadius: "6px",
             display: { xs: "block", md: "none" },
@@ -48,15 +48,15 @@ const Item = ({ item }: { item: dataProps }) => {
           <Image
             src={item.image_url}
             alt={item.product_title}
-            width={170}
+            width={150}
             height={150}
-            objectFit="cover"
             style={{ borderRadius: "2px" }}
           />
         </Box>
+
         <Box
           sx={{
-            width: 200,
+            width: 210,
             height: 170,
             borderRadius: "2px",
             display: { xs: "none", md: "block" },
@@ -65,7 +65,7 @@ const Item = ({ item }: { item: dataProps }) => {
           <Image
             src={item.image_url}
             alt={item.product_title}
-            width={200}
+            width={210}
             height={170}
             style={{ borderRadius: "2px" }}
           />

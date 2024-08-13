@@ -9,6 +9,9 @@ import Link from "next/link";
 import CloseIcon from "@mui/icons-material/Close";
 import { usePathname } from "next/navigation";
 import { DUMMY_DATA } from "@/utils/constants";
+import DescriptionSection from "./DescriptionSection";
+import EmailSection from "./EmailSection";
+import FooterSection from "./FooterSection";
 const theme = createTheme({
   typography: {
     allVariants: {
@@ -88,6 +91,11 @@ const DetailSection = () => {
       <Navbar />
       <Breadcrumb />
       <Product product={product} />
+      <DescriptionSection />
+      <EmailSection />
+      <footer>
+        <FooterSection />
+      </footer>
     </ThemeProvider>
   );
 };

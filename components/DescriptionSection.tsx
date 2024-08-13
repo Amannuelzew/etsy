@@ -3,7 +3,7 @@ import PillButton from "./PillButton";
 
 const DescriptionSection = () => {
   return (
-    <Box sx={{ px: 6, py: 10, bgcolor: "#FFFBD8" }}>
+    <Box sx={{ mt: 3, px: 6, py: 10, bgcolor: "#FFFBD8" }}>
       <Box>
         <Typography
           variant="h4"

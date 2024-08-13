@@ -23,12 +23,12 @@ const Breadcrumb = () => {
             <ListItem>
               <ListItemText>
                 <Link href={list.path} style={{ color: "#000" }}>
-                  {list.name}
+                  <Typography> {list.name}</Typography>
                 </Link>
               </ListItemText>
             </ListItem>
           ) : (
-            list.name
+            <Typography> {list.name}</Typography>
           )}
 
           <NavigateNextIcon fontSize="small" />

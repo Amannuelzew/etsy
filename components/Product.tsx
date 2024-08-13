@@ -56,7 +56,6 @@ const Product = ({ product }: { product: productProps }) => {
                   alt={product.product_title}
                   width={60}
                   height={60}
-                  objectFit="fit"
                   style={{ borderRadius: "6px" }}
                 />
                 <Box
@@ -114,7 +113,6 @@ const Product = ({ product }: { product: productProps }) => {
                 src={product.image_url}
                 alt={product.product_title}
                 layout="fill"
-                objectFit="cover"
                 style={{ borderRadius: "2px" }}
               />
             </div>
