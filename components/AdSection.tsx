@@ -12,7 +12,7 @@ const AdSection = () => {
       sx={{
         display: "flex",
         gap: { xs: 1, md: 4 },
-        px: { xs: 0.5, md: 1 },
+        p: { xs: 0.5, md: 1 },
         mt: 1,
       }}
     >
@@ -68,7 +68,7 @@ const AdSection = () => {
         <Stack
           direction="row"
           spacing={1}
-          sx={{ display: { xs: "none", md: "block" }, mb: 0.5 }}
+          sx={{ display: { xs: "none", md: "flex" }, mb: 0.5 }}
         >
           <Typography sx={{ textDecoration: "underline" }}>efrtau</Typography>
           <Rating count={5} />
