@@ -48,12 +48,12 @@ const Item = ({ item }: { item: dataProps }) => {
           <Image
             src={item.image_url}
             alt={item.product_title}
-            width={150}
+            width={200}
             height={150}
-            style={{ borderRadius: "2px" }}
+            style={{ borderRadius: "2px", width: "100%", height: "100%" }}
           />
         </Box>
-
+        {/* md view */}
         <Box
           sx={{
             width: 210,
@@ -70,8 +70,10 @@ const Item = ({ item }: { item: dataProps }) => {
             style={{ borderRadius: "2px" }}
           />
         </Box>
+
         <Typography
           sx={{
+            mt: 1,
             fontWeight: "500",
             fontSize: "16.99px",
           }}
