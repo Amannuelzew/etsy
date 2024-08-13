@@ -50,7 +50,9 @@ const FilterSection = () => {
           bgcolor: "#0e0e0e17",
           p: 1,
           borderRadius: "20px",
+          mx: { xs: 2, md: 0 },
           mt: 1,
+          mb: 3,
         }}
       >
         <Box
